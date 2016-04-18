@@ -14,11 +14,3 @@ FlowRouter.route("/", {
   }
 });
 
-FlowRouter.route('/post/:_id', {
-  name: 'post',
-  action(params) {
-    mount(BlogLayout, {
-      content: <PostPage _id={params._id} />
-    });
-  }
-});

@@ -1,16 +1,21 @@
 import React from 'react';
+import Post from './post.jsx';
 
-const PostList = ({posts}) => (
-  <div>
-    This is the post list
-    <ul>
-      {posts.map(({_id, title}) => (
-        <li key={_id}>
-          <a href={FlowRouter.path('post', {_id})}>{title}</a>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+class PostList extends React.Component {
+    render() {
+        return <div>
+            This is the post list
+            <ul>
+              {this.props.posts.map(({_id, title}) => (
+                <Post key={_id} _id={_id} title={title} />
+              ))}
+            </ul>
+          </div>
+    }
+
+    componentDidMount() {
+      console.log('hello');
+    }
+}
 
 export default PostList;

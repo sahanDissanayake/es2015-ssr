@@ -9,5 +9,6 @@ Meteor.publish('posts', () => {
 
 Meteor.publish('singlePost', _id => {
   check(_id, String);
+  // Meteor._sleepForMs(2000);
   return Posts.find({_id});
 });
